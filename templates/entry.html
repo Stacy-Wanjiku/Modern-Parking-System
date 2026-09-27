@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Vehicle Entry</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="form-container">
+
+        <h1>🚘 Vehicle Entry</h1>
+
+        <p>Register a vehicle entering the parking area.</p>
+
+
+        {% if message %}
+
+            <div class="error">
+                {{ message }}
+            </div>
+
+        {% endif %}
+
+
+        {% if success %}
+
+            <div class="success">
+
+                <h2>Vehicle Successfully Parked! ✅</h2>
+
+                <p>
+                    <strong>Registration:</strong>
+                    {{ registration }}
+                </p>
+
+                <p>
+                    <strong>Parking Slot:</strong>
+                    {{ parking_slot }}
+                </p>
+
+                <p>
+                    <strong>Arrival Time:</strong>
+                    {{ arrival_time }}
+                </p>
+
+            </div>
+
+        {% else %}
+
+
+            <form method="POST">
+
+                <label>
+                    Vehicle Registration Number
+                </label>
+
+                <input
+                    type="text"
+                    name="registration"
+                    placeholder="e.g. KDA 123A"
+                    required
+                >
+
+
+                <button type="submit"
+                        class="entry-button">
+
+                    Park Vehicle
+
+                </button>
+
+            </form>
+
+        {% endif %}
+
+
+        <a href="/">
+            <button class="back-button">
+                Back to Dashboard
+            </button>
+        </a>
+
+    </div>
+
+</body>
+
+</html>

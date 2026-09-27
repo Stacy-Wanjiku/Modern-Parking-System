@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Vehicle Exit</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="form-container">
+
+        <h1>🚗 Vehicle Exit</h1>
+
+        <p>Process a vehicle leaving the parking area.</p>
+
+
+        {% if message %}
+
+            <div class="error">
+
+                {{ message }}
+
+            </div>
+
+        {% endif %}
+
+
+        {% if success %}
+
+            <div class="success">
+
+                <h2>Exit Successful! ✅</h2>
+
+                <p>
+                    <strong>Registration:</strong>
+                    {{ registration }}
+                </p>
+
+                <p>
+                    <strong>Parking Slot:</strong>
+                    {{ parking_slot }}
+                </p>
+
+                <p>
+                    <strong>Arrival Time:</strong>
+                    {{ arrival_time }}
+                </p>
+
+                <p>
+                    <strong>Exit Time:</strong>
+                    {{ exit_time }}
+                </p>
+
+                <p>
+                    <strong>Parking Duration:</strong>
+                    {{ "%.2f"|format(hours) }} hours
+                </p>
+
+                <p>
+                    <strong>Parking Fee:</strong>
+                    KSh {{ fee }}
+                </p>
+
+                <p>
+                    <strong>Amount Paid:</strong>
+                    KSh {{ payment }}
+                </p>
+
+                <p>
+                    <strong>Change:</strong>
+                    KSh {{ "%.2f"|format(change) }}
+                </p>
+
+                <hr>
+
+                <h3>
+                    Payment Successful ✅
+                </h3>
+
+                <h3>
+                    Exit Barrier: {{ barrier }}
+                </h3>
+
+                <p>
+                    Available Slots:
+                    <strong>{{ available }}</strong>
+                </p>
+
+            </div>
+
+
+        {% else %}
+
+
+            <form method="POST">
+
+                <label>
+                    Vehicle Registration Number
+                </label>
+
+                <input
+                    type="text"
+                    name="registration"
+                    placeholder="e.g. KDA 123A"
+                    required
+                >
+
+
+                <label>
+                    Payment Amount (KSh)
+                </label>
+
+                <input
+                    type="number"
+                    name="payment"
+                    min="0"
+                    step="0.01"
+                    placeholder="Enter amount"
+                    required
+                >
+
+
+                <button type="submit"
+                        class="exit-button">
+
+                    Process Exit
+
+                </button>
+
+            </form>
+
+        {% endif %}
+
+
+        <a href="/">
+            <button class="back-button">
+                Back to Dashboard
+            </button>
+        </a>
+
+    </div>
+
+</body>
+
+</html><!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Vehicle Exit</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="form-container">
+
+        <h1>🚗 Vehicle Exit</h1>
+
+        <p>Process a vehicle leaving the parking area.</p>
+
+
+        {% if message %}
+
+            <div class="error">
+
+                {{ message }}
+
+            </div>
+
+        {% endif %}
+
+
+        {% if success %}
+
+            <div class="success">
+
+                <h2>Exit Successful! ✅</h2>
+
+                <p>
+                    <strong>Registration:</strong>
+                    {{ registration }}
+                </p>
+
+                <p>
+                    <strong>Parking Slot:</strong>
+                    {{ parking_slot }}
+                </p>
+
+                <p>
+                    <strong>Arrival Time:</strong>
+                    {{ arrival_time }}
+                </p>
+
+                <p>
+                    <strong>Exit Time:</strong>
+                    {{ exit_time }}
+                </p>
+
+                <p>
+                    <strong>Parking Duration:</strong>
+                    {{ "%.2f"|format(hours) }} hours
+                </p>
+
+                <p>
+                    <strong>Parking Fee:</strong>
+                    KSh {{ fee }}
+                </p>
+
+                <p>
+                    <strong>Amount Paid:</strong>
+                    KSh {{ payment }}
+                </p>
+
+                <p>
+                    <strong>Change:</strong>
+                    KSh {{ "%.2f"|format(change) }}
+                </p>
+
+                <hr>
+
+                <h3>
+                    Payment Successful ✅
+                </h3>
+
+                <h3>
+                    Exit Barrier: {{ barrier }}
+                </h3>
+
+                <p>
+                    Available Slots:
+                    <strong>{{ available }}</strong>
+                </p>
+
+            </div>
+
+
+        {% else %}
+
+
+            <form method="POST">
+
+                <label>
+                    Vehicle Registration Number
+                </label>
+
+                <input
+                    type="text"
+                    name="registration"
+                    placeholder="e.g. KDA 123A"
+                    required
+                >
+
+
+                <label>
+                    Payment Amount (KSh)
+                </label>
+
+                <input
+                    type="number"
+                    name="payment"
+                    min="0"
+                    step="0.01"
+                    placeholder="Enter amount"
+                    required
+                >
+
+
+                <button type="submit"
+                        class="exit-button">
+
+                    Process Exit
+
+                </button>
+
+            </form>
+
+        {% endif %}
+
+
+        <a href="/">
+            <button class="back-button">
+                Back to Dashboard
+            </button>
+        </a>
+
+    </div>
+
+</body>
+
+</html>

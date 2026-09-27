@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Modern Parking System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1> Modern Parking System</h1>
+
+        <p class="subtitle">
+            Parking Availability Dashboard
+        </p>
+
+        
+        <div class="dashboard">
+
+            <div class="card">
+
+                <h2>{{ total }}</h2>
+
+                <p>Total Slots</p>
+
+            </div>
+
+
+            <div class="card available">
+
+                <h2>{{ available }}</h2>
+
+                <p>Available Slots</p>
+
+            </div>
+
+
+            <div class="card occupied">
+
+                <h2>{{ occupied }}</h2>
+
+                <p>Occupied Slots</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <a href="/entry">
+
+                <button class="entry-button">
+                    Vehicle Entry
+                </button>
+
+            </a>
+
+
+            <a href="/exit">
+
+                <button class="exit-button">
+                     Vehicle Exit
+                </button>
+
+            </a>
+
+        </div>
+
+
+        <h2>Parking Charges</h2>
+
+        <table>
+
+            <tr>
+                <th>Duration</th>
+                <th>Fee</th>
+            </tr>
+
+            <tr>
+                <td>Up to 30 minutes</td>
+                <td>Free</td>
+            </tr>
+
+            <tr>
+                <td>Up to 2 hours</td>
+                <td>KSh 50</td>
+            </tr>
+
+            <tr>
+                <td>Up to 4 hours</td>
+                <td>KSh 100</td>
+            </tr>
+
+            <tr>
+                <td>Up to 6 hours</td>
+                <td>KSh 300</td>
+            </tr>
+
+            <tr>
+                <td>Over 6 hours</td>
+                <td>KSh 500</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>
